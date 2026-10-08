@@ -1,0 +1,20 @@
+disabled = false
+locale = "pl"
+label = "Polski"
+weight = 2
+title = "Sysadmin Lab"
+
+[params]
+  displayName = "PL"
+  isoCode = "pl"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "AI dla sysadminów. Sprawdzone, bez hype’."
+
+[params.author]
+  name = "Adrian"
+  headline = "Security / DevOps engineer"
+  links = [
+    { github = "https://github.com/sysadmin-info" },
+    { youtube = "https://youtube.com/@sysadmin-info" },
+  ]
