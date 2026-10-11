@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sysadmin Lab cover</title>
+<style>
+  /* Fonts are loaded straight from the site's static/fonts (no network). */
+  @font-face { font-family: "Chakra Petch"; font-weight: 500; src: url("../../static/fonts/chakra-petch/chakra-petch-latin-500-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  @font-face { font-family: "Chakra Petch"; font-weight: 500; src: url("../../static/fonts/chakra-petch/chakra-petch-latin-ext-500-normal.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+  @font-face { font-family: "Chakra Petch"; font-weight: 700; src: url("../../static/fonts/chakra-petch/chakra-petch-latin-700-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  @font-face { font-family: "Chakra Petch"; font-weight: 700; src: url("../../static/fonts/chakra-petch/chakra-petch-latin-ext-700-normal.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+  @font-face { font-family: "IBM Plex Sans"; font-weight: 400; src: url("../../static/fonts/ibm-plex-sans/ibm-plex-sans-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  @font-face { font-family: "IBM Plex Sans"; font-weight: 400; src: url("../../static/fonts/ibm-plex-sans/ibm-plex-sans-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+  @font-face { font-family: "JetBrains Mono"; font-weight: 600; src: url("../../static/fonts/jetbrains-mono/jetbrains-mono-latin-600-normal.woff2") format("woff2"); }
+
+  :root {
+    --bg: #0B0E14;
+    --surface: #121722;
+    --border: #1F2635;
+    --text: #E6E8EE;
+    --text-2: #9AA3B5;
+    --accent: #2DE2E6;
+    --signal: #FF2E88;
+    --warning: #F3E600;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); }
+
+  .cover {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    color: var(--text);
+    font-family: "IBM Plex Sans", sans-serif;
+    background-color: var(--bg);
+    background-size: cover;
+    background-position: center right;
+  }
+
+  /* Placeholder used when no --bg image is given: dark grid + faint glow. */
+  .cover.placeholder {
+    background-image:
+      radial-gradient(ellipse 60% 70% at 85% 40%, rgba(45, 226, 230, 0.10), transparent 70%),
+      radial-gradient(ellipse 40% 50% at 95% 95%, rgba(255, 46, 136, 0.10), transparent 70%),
+      linear-gradient(rgba(31, 38, 53, 0.9) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 38, 53, 0.9) 1px, transparent 1px),
+      linear-gradient(var(--surface), var(--bg));
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px, 100% 100%;
+    background-position: 0 0, 0 0, -1px -1px, -1px -1px, 0 0;
+  }
+
+  /* Dark gradient on the left keeps the text readable over any image. */
+  .shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      rgba(11, 14, 20, 0.97) 0%,
+      rgba(11, 14, 20, 0.92) 38%,
+      rgba(11, 14, 20, 0.55) 62%,
+      rgba(11, 14, 20, 0.05) 100%);
+  }
+
+  .frame {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px 72px 56px;
+  }
+
+  .accent-bar {
+    position: absolute;
+    left: 0;
+    top: 64px;
+    width: 6px;
+    height: 72px;
+    background: var(--accent);
+  }
+
+  .log {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  .log::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 24px;
+    margin-left: 10px;
+    vertical-align: -3px;
+    background: var(--signal);
+  }
+
+  .body { max-width: 720px; }
+
+  .title {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 1.05;
+    letter-spacing: 0.005em;
+    color: var(--text);
+    text-wrap: balance;
+  }
+
+  .subtitle {
+    margin-top: 22px;
+    font-size: 28px;
+    line-height: 1.35;
+    color: var(--text-2);
+    text-wrap: pretty;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.32em;
+    color: var(--text);
+  }
+
+  .footer .rule {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .footer .tld { color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="cover placeholder" id="cover">
+    <div class="shade"></div>
+    <div class="accent-bar"></div>
+    <div class="frame">
+      <div class="log" id="log">LOG #001</div>
+      <div class="body">
+        <h1 class="title" id="title">Title</h1>
+        <p class="subtitle" id="subtitle"></p>
+      </div>
+      <div class="footer"><span class="rule"></span><span>SYSADMIN LAB <span class="tld">.SI</span></span></div>
+    </div>
+  </div>
+  <script>
+    // Parameters arrive in the query string (set by render.mjs).
+    // textContent only: user-supplied strings are never parsed as HTML.
+    const q = new URLSearchParams(location.search);
+    const set = (id, v) => { if (v !== null) document.getElementById(id).textContent = v; };
+    set("title", q.get("title"));
+    set("subtitle", q.get("subtitle"));
+    set("log", q.get("log"));
+    if (!q.get("subtitle")) document.getElementById("subtitle").remove();
+    const bg = q.get("bg");
+    if (bg) {
+      const cover = document.getElementById("cover");
+      cover.classList.remove("placeholder");
+      cover.style.backgroundImage = `url("${bg.replace(/"/g, "%22")}")`;
+    }
+  </script>
+</body>
+</html>
