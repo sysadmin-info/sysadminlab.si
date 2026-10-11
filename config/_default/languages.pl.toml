@@ -9,7 +9,7 @@ title = "Sysadmin Lab"
   isoCode = "pl"
   rtl = false
   dateFormat = "2 January 2006"
-  description = "AI dla sysadminów. Sprawdzone, bez hype’."
+  description = "AI dla sysadminów. Sprawdzone, bez hype’u."
 
 [params.author]
   name = "Adrian"

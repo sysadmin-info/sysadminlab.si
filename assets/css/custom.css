@@ -196,3 +196,65 @@ mark {
 .bg-surface {
   background-color: rgba(var(--color-surface), 1);
 }
+
+/* -- Homepage hero --
+ * Blowfish's hero layout centres everything over the image. The left side of
+ * hero.webp is the dark one, so the text block is moved there and backed by a
+ * gradient that fades into the lit right-hand side. Scoped with :has() to the
+ * block that contains the tagline from content/_index.*.md.
+ */
+article .relative:has(> section .hero-tagline) {
+  align-items: flex-start;
+  text-align: left;
+  background-image: linear-gradient(
+    90deg,
+    rgba(var(--color-neutral-900), 0.82) 0%,
+    rgba(var(--color-neutral-900), 0.6) 40%,
+    rgba(var(--color-neutral-900), 0) 75%
+  );
+}
+
+article .relative:has(> section .hero-tagline) > .mt-3 > .flex {
+  margin-left: -0.25rem; /* align icon glyphs with the text edge */
+}
+
+.hero-tagline {
+  max-width: 34rem;
+}
+
+.prose .hero-tagline p {
+  margin: 0;
+}
+
+.prose .hero-tagline .hero-tagline__lead {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  color: rgba(var(--color-neutral-50), 1);
+  text-shadow: 0 1px 12px rgba(var(--color-neutral-900), 0.8);
+}
+
+.prose .hero-tagline .hero-tagline__node {
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  color: rgba(var(--color-primary-400), 1);
+}
+
+/* Narrow screens: the image is cropped around its centre, so the bright
+ * facade sits behind the text. Darken evenly instead of left-to-right. */
+@media (max-width: 639px) {
+  article .relative:has(> section .hero-tagline) {
+    background-image: linear-gradient(
+      180deg,
+      rgba(var(--color-neutral-900), 0.55) 0%,
+      rgba(var(--color-neutral-900), 0.75) 100%
+    );
+  }
+
+  .prose .hero-tagline .hero-tagline__lead {
+    font-size: 1.375rem;
+  }
+}

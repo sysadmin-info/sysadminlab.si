@@ -65,9 +65,11 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, background, landing, custom
+  layout = "hero" # valid options: page, profile, hero, card, background, landing, custom
   # layoutSwitcher = false # opt-in interactive preview of the built-in layouts
-  #homepageImage = "IMAGE.jpg" # used in: hero, and card
+  # The hero layout serves this file as-is (no resizing), so it is pre-optimised
+  # to WebP from the source PNG kept outside the repo.
+  homepageImage = "img/hero.webp" # used in: hero, and card
   showRecent = false
   showRecentItems = 5
   showMoreLink = false
@@ -75,7 +77,9 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   cardView = false
   cardViewScreenWidth = false
   layoutBackgroundBlur = false # only used when layout equals background
-  disableHeroImageFilter = false # only used when layout equals hero
+  # The built-in filter tints the image cyan/magenta; legibility comes from the
+  # gradient in assets/css/custom.css instead.
+  disableHeroImageFilter = true # only used when layout equals hero
 
 [article]
   showDate = true
