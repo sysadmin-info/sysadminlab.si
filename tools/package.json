@@ -1,0 +1,13 @@
+{
+  "name": "sysadminlab-tools",
+  "private": true,
+  "type": "module",
+  "description": "Build-time helpers for sysadminlab.si (cover renderer, screenshots). Not part of the Hugo build.",
+  "scripts": {
+    "cover": "node cover/render.mjs",
+    "screenshots": "node screenshots/capture.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.0"
+  }
+}
