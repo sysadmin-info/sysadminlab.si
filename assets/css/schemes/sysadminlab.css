@@ -1,0 +1,51 @@
+/* Sysadmin Lab scheme
+ *
+ * Dark-first palette. Key anchors in dark mode (see themes/blowfish layouts):
+ *   neutral-800  -> page background  #0B0E14
+ *   neutral-700  -> borders          #1F2635
+ *   neutral      -> body text        #E6E8EE
+ *   neutral-400  -> secondary text   #9AA3B5
+ *   primary-400  -> links / accent   #2DE2E6
+ *   secondary-400 -> signal          #FF2E88
+ * Surface (#121722) and warning (#F3E600) have no Blowfish slot; they are
+ * exposed as extra variables and used from assets/css/custom.css.
+ */
+:root {
+  --color-neutral: 230, 232, 238;
+  /* Graphite */
+  --color-neutral-50: 244, 245, 248;
+  --color-neutral-100: 230, 232, 238;
+  --color-neutral-200: 205, 210, 220;
+  --color-neutral-300: 180, 187, 201;
+  --color-neutral-400: 154, 163, 181;
+  --color-neutral-500: 124, 133, 152;
+  --color-neutral-600: 44, 52, 70;
+  --color-neutral-700: 31, 38, 53;
+  --color-neutral-800: 11, 14, 20;
+  --color-neutral-900: 6, 8, 12;
+  /* Cyan (accent) */
+  --color-primary-50: 233, 253, 253;
+  --color-primary-100: 201, 249, 250;
+  --color-primary-200: 152, 242, 244;
+  --color-primary-300: 95, 234, 237;
+  --color-primary-400: 45, 226, 230;
+  --color-primary-500: 27, 196, 200;
+  --color-primary-600: 20, 160, 164;
+  --color-primary-700: 18, 125, 129;
+  --color-primary-800: 18, 95, 99;
+  --color-primary-900: 15, 70, 73;
+  /* Magenta (signal) */
+  --color-secondary-50: 255, 240, 246;
+  --color-secondary-100: 255, 220, 234;
+  --color-secondary-200: 255, 184, 213;
+  --color-secondary-300: 255, 133, 184;
+  --color-secondary-400: 255, 46, 136;
+  --color-secondary-500: 240, 20, 111;
+  --color-secondary-600: 204, 10, 91;
+  --color-secondary-700: 163, 8, 74;
+  --color-secondary-800: 122, 7, 58;
+  --color-secondary-900: 82, 6, 42;
+  /* Extra tokens (not part of the Blowfish palette) */
+  --color-surface: 18, 23, 34;
+  --color-warning: 243, 230, 0;
+}
