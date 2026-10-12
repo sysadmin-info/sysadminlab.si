@@ -258,3 +258,22 @@ article .relative:has(> section .hero-tagline) > .mt-3 > .flex {
     font-size: 1.375rem;
   }
 }
+
+/* -- Header logo --
+ * logo-mark.svg is inlined by header/basic.html inside span.logo; the site
+ * title link follows it as a sibling of the logo wrapper.
+ */
+.main-menu .logo svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.main-menu > div:has(.logo) + a {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e6e8ee;
+}
