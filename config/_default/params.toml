@@ -22,6 +22,8 @@ replyByEmail = false
 
 disableImageOptimization = false
 disableImageOptimizationMD = false
+# Header: logo mark plus site title (both shown by header/basic.html).
+logo = "img/logo-mark.svg"
 disableTextInHeader = false
 # backgroundImageWidth = 1200
 
